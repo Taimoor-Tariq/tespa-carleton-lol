@@ -1,0 +1,70 @@
+doctype html
+html
+    head
+        link(rel="shortcut icon" href="/favicon.ico" type="image/x-icon")
+        title LoL Inhouses
+        style !{style}
+
+
+.container.mt-5
+    .card.text-dark
+        .card-header.media
+            img.align-self-center(src="/assets/logos/logo-dark.png" alt="logo" style="height: 200px;")
+            .media-body
+                table(style="height: 200px;")
+                    tr
+                        td.align-middle
+                            h1(style="font-weight: 900; font-size: 42pt;") TESPA Carleton LoL Inhouses
+
+        .card-body.m-3
+            .card-deck
+                .card
+                    .card-body
+                        h5.card-title
+                            b Rules
+                        p.card-text 
+                            | View the 
+                            b Rules 
+                            | and 
+                            b Format 
+                            | of the tournament.
+                        
+                    .card-footer.text-right
+                        a(href="#").btn.btn-primary VIEW
+            
+                .card
+                    .card-body
+                        h5.card-title
+                            b Players
+                        p.card-text
+                            | View the 
+                            b Players 
+                            | and 
+                            b Teams 
+                            | participaing in the tournament.
+
+                    .card-footer.text-right
+                        a(href="#").btn.btn-primary VIEW
+
+                .card
+                    .card-body
+                        h5.card-title
+                            b Matches
+                        p.card-text
+                            | View all the 
+                            b Round Robin 
+                            | and 
+                            b Playoff 
+                            | matches.
+
+                    .card-footer.text-right
+                        a(href="#").btn.btn-primary VIEW
+
+            .input-group.mt-5
+                .input-group-prepend
+                    span.input-group-text Registerations open soon
+                .input-group-append
+                    button(style="cursor: not-allowed !important;" disabled="").btn.btn-primary REGISTER
+
+
+include _footer
