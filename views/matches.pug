@@ -1,0 +1,62 @@
+doctype html
+html
+    head
+        link#favicon(rel="shortcut icon" href="/favicon.ico" type="image/x-icon")
+        script(src='https://kit.fontawesome.com/7e8647c319.js')
+        title LoL Inhouses
+        style !{style}
+
+.container.mt-5
+    ol.breadcrumb
+        li.breadcrumb-item
+            a.text-info(href="/") Home
+            .dropdown.dropright
+                a(href="#" role="button" data-toggle="dropdown").ml-2
+                    i.fas.fa-caret-right.mt-1.text-info
+
+                .dropdown-menu
+                    a(href="rules").dropdown-item Rules
+                    a(href="players").dropdown-item Players
+
+        li.breadcrumb-item.active Matches
+
+    .card.text-dark
+        .card-header
+            h1.mb-3 Matches
+
+            ul.nav.nav-tabs.card-header-tabs
+                li.nav-item
+                    a.text-info(href="#round-robin" data-toggle="tab").nav-link.active Round Robin
+
+                li.nav-item
+                    a.text-info(href="#playoffs" data-toggle="tab").nav-link Playoffs
+
+        .card-body
+            .tab-content
+                #round-robin.tab-pane.fade.show.active
+                    if GAMES.length == 0
+                        h5.card-title.text-center.mt-3 Will be scheduled soon
+                    else
+                        #weeks.accordion
+                            each WEEK in GAMES
+                                .card
+                                    .card-header
+                                        a.btn.btn-link.btn-block.text-left.text-info(role="button" data-toggle="collapse" href='#'+WEEK.id)= WEEK.name
+
+                                    .collapse(id=WEEK.id)
+                                        .card-body
+                                            if WEEK.games.length == 0
+                                                p.card-text No Games Yet
+                                            else
+                                                .list-group
+                                                    each GAME in WEEK.games
+                                                        .list-group-item
+                                                            p GAME
+
+
+
+                #playoffs.tab-pane.fade
+                    h5.card-title.text-center.mt-3 Will be scheduled soon
+
+
+include _footer
